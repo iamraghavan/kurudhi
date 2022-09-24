@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kurudhi - Login</title>
+  <!-- <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ 
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+
+    
+
+
+
+
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+          <div class="card login-card">
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/Tablet%20login-rafiki.svg?alt=media&token=4d399a7b-b9a8-4190-a689-5f70a1294e88" alt="login" class="login-card-img">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <div class="brand-wrapper">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/NaviBlueLogo.png?alt=media&token=ff698b21-89d5-42e0-935c-e57a15f4203c" alt="logo" class="logo">
+                  </div>
+                  <p class="login-card-description">Sign into your <span style="color:red ; font-weight: bold";> Kurudhi Dashboard </span> Account</p>
+                  <form onsubmit="login()" id="loginForm">
+                      <div class="form-group">
+                        <label for="email" class="sr-only">Email</label>
+                        <input id="email" type="text" name="" autocomplete="nope"  required class="form-control" placeholder="Email address">
+                      </div>
+                      <div class="form-group mb-4">
+                        <label for="password" class="sr-only">Password</label>
+                        <input id="password" type="password" autocomplete="off" required class="form-control" placeholder="***********">
+                      </div>
+                      <button type="submit" class="btn btn-block login-btn mb-4">Login</button>
+                      <!-- <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login"> -->
+                    </form>
+
+                   <a href="#" onclick="forgotPass()" class="forgot-password-link" style="font-weight:none; font-size: 15px;" >Forgot password?</a>
+                    <!-- <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset">Register here</a></p> -->
+                    <nav class="login-card-footer-nav">
+                      <a href="#!">Terms of use.</a>
+                      <a href="#!">Forget The your Email</a>
+                    </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        
+      </main>
+
+
+    
+
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+
+
+<script src="./Utility/config.firebase.js"></script>
+<script src="./javascript/firebaseIndex.js"></script>
+ 
+
+
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
