@@ -8,7 +8,7 @@
   <title>Kurudhi - Login</title>
   <!-- <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet"> -->
-  <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -35,7 +35,7 @@
                   <div class="brand-wrapper">
                     <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/NaviBlueLogo.png?alt=media&token=ff698b21-89d5-42e0-935c-e57a15f4203c" alt="logo" class="logo">
                   </div>
-                  <p class="login-card-description">Sign into your <span style="color:red ; font-weight: bold";> Kurudhi Dashboard </span> Account</p>
+                  <p class="login-card-description">Signup into your <span style="color:red ; font-weight: bold";> Kurudhi Dashboard </span> Account</p>
                   <form onsubmit="login()" id="loginForm">
                       <div class="form-group">
                         <label for="email" class="sr-only">Email</label>
@@ -45,8 +45,8 @@
                         <label for="password" class="sr-only">Password</label>
                         <input id="password" type="password" autocomplete="off" required class="form-control" placeholder="***********">
                       </div>
-                      <button type="submit" class="btn btn-block login-btn mb-4">Login</button>
-                      <!-- <button onclick="signUp()" class="btn btn-block login-btn mb-4">Sign Up</button> -->
+                      <!-- <button type="submit" class="btn btn-block login-btn mb-4">Login</button> -->
+                      <button onclick="signUp()" class="btn btn-block login-btn mb-4">Sign Up</button>
                       <!-- <input name="login" id="login" class="btn btn-block login-btn mb-4" type="button" value="Login"> -->
                     </form>
 
@@ -75,7 +75,7 @@
 
 
 <script src="./Utility/config.firebase.js"></script>
-<script src="./javascript/firebaseIndex.js"></script>
+<script src="./javascript/OAuth.js"></script>
  
 
 

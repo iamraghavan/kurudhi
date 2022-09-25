@@ -1,0 +1,181 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth OTP Verification - Kurudhi</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+
+    <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+        <div class="container">
+          <div class="card login-card">
+            <div class="row no-gutters">
+              <div class="col-md-5">
+                <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/Tablet%20login-rafiki.svg?alt=media&token=4d399a7b-b9a8-4190-a689-5f70a1294e88" alt="login" class="login-card-img">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <div class="brand-wrapper">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/NaviBlueLogo.png?alt=media&token=ff698b21-89d5-42e0-935c-e57a15f4203c" alt="logo" class="logo">
+                  </div>
+                  <p class="login-card-description">Sign into your <span style="color:red ; font-weight: bold";> Kurudhi Dashboard </span> Account</p>
+                  
+                  <div class="container">
+                    <div id="sender">
+                        <input type="text" class="form-control" id="number" placeholder="+923...">
+                        <div id="recaptcha-container"></div>
+                        <input type="button" class="btn btn-block login-btn mb-4" id="send" value="Send" onClick="phoneAuth()">
+                    </div>
+                    <div id="verifier" style="display: none">
+                        <input type="text" class="form-control" id="verificationcode" placeholder="OTP Code">
+                        <input type="button" class="btn btn-block login-btn mb-4" id="verify" value="Verify" onClick="codeverify()">
+                        <div class="p-conf">Number Verified</div>
+                        <div class="n-conf">OTP ERROR</div>
+                    </div>
+                </div>
+
+
+                
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        
+      </main>
+    
+
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+    <script src="./Utility/config.firebase.js"></script>
+    <script src="./javascript/OAuthOTP.js"></script>
+
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html> -->
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Number verification with OTP</title>
+<style>
+	.container {
+		width: 302px;
+		height: 175px;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		bottom: 0px;
+		margin: auto;
+	}
+	#number, #verificationcode {
+		width: calc(100% - 24px);
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+		outline: none;
+	}
+	#recaptcha-container {
+		margin-bottom: 5px;
+	}
+	#send, #verify {
+		width: 100%;
+		height: 40px;
+		outline: none;
+	}
+	.p-conf, .n-conf {
+		width: calc(100% - 22px);
+		border: 2px solid green;
+		border-radius: 4px;
+		padding: 8px 10px;
+		margin: 4px 0px;
+		background-color: rgba(0, 249, 12, 0.5);
+		display: none;
+	}
+	.n-conf {
+		border-color: red;
+		background-color: rgba(255, 0, 4, 0.5);
+	}
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="sender">
+			<input type="text" class="form-control" id="number" placeholder="+923...">
+			<div id="recaptcha-container"></div>
+			<input type="button" class="btn btn-block login-btn mb-4" id="send" value="Send" onClick="phoneAuth()">
+		</div>
+		<div id="verifier" style="display: none">
+			<input type="text" class="form-control" id="verificationcode" placeholder="OTP Code">
+			<input type="button" class="btn btn-block login-btn mb-4" id="verify" value="Verify" onClick="codeverify()">
+			<div class="p-conf">Number Verified</div>
+			<div class="n-conf">OTP ERROR</div>
+		</div>
+	</div>
+<!--	add firebase SDK-->
+<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+<script>
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyC3MIN64hy_oTQfQWUHl0lID-CJkIfci0M",
+  authDomain: "yt-project-a29f8.firebaseapp.com",
+  projectId: "yt-project-a29f8",
+  storageBucket: "yt-project-a29f8.appspot.com",
+  messagingSenderId: "159898773748",
+  appId: "1:159898773748:web:2985334de4f06ff73356a1",
+  measurementId: "G-DLWR9M5SJC"
+};
+		firebase.initializeApp(firebaseConfig);
+render();
+function render(){
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+	recaptchaVerifier.render();
+}
+	// function for send message
+function phoneAuth(){
+	var number = document.getElementById('number').value;
+	firebase.auth().signInWithPhoneNumber(number, window.recaptchaVerifier).then(function(confirmationResult){
+		window.confirmationResult = confirmationResult;
+		coderesult = confirmationResult;
+		document.getElementById('sender').style.display = 'none';
+		document.getElementById('verifier').style.display = 'block';
+	}).catch(function(error){
+		alert(error.message);
+	});
+}
+	// function for code verify
+function codeverify(){
+	var code = document.getElementById('verificationcode').value;
+	coderesult.confirm(code).then(function(){
+		document.getElementsByClassName('p-conf')[0].style.display = 'block';
+		document.getElementsByClassName('n-conf')[0].style.display = 'none';
+	}).catch(function(){
+		document.getElementsByClassName('p-conf')[0].style.display = 'none';
+		document.getElementsByClassName('n-conf')[0].style.display = 'block';
+	})
+}
+</script>
+</body>
+</html>
