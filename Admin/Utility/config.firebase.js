@@ -1,6 +1,8 @@
+
 var firebaseConfig = {
   apiKey: "AIzaSyDxAw4TI0OJD2zHPEuyR2vEwPEts3cyPGI",
   authDomain: "kurudhi-blood-bank.firebaseapp.com",
+  databaseURL: "https://kurudhi-blood-bank-default-rtdb.asia-southeast1.firebasedatabase.app",
   projectId: "kurudhi-blood-bank",
   storageBucket: "kurudhi-blood-bank.appspot.com",
   messagingSenderId: "701515333227",
@@ -9,6 +11,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
 // admin.initializeApp({
 //     credential: admin.credential.applicationDefault(),

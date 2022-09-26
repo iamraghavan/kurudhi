@@ -61,6 +61,14 @@
 
                         <li class="sidebar-item has-sub">
                             <a href="#" class='sidebar-link'>
+                                <i class="bi bi-table"></i>
+                                <span>Search Donors</span>
+                            </a>
+            
+                        </li>
+
+                        <li class="sidebar-item has-sub">
+                            <a href="#" class='sidebar-link'>
                                 <i class="bi bi-server"></i>
                                 <span>Upload Database</span>
                             </a>
@@ -173,14 +181,14 @@
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
                                                                         <label for="first-name-column ">Full Name</label>
-                                                                        <input type="text" inputmode="text" id="first-name-column " class="form-control"
+                                                                        <input type="text" inputmode="text" id="name" class="form-control"
                                                                             placeholder="Full Name" name="fname-column">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
                                                                         <label for="last-name-column">Email id</label>
-                                                                        <input inputmode="email" type="email"  id="last-name-column" class="form-control "
+                                                                        <input inputmode="email" type="email"  id="email" class="form-control "
                                                                             placeholder="Email" name="lname-column">
                                                                     </div>
                                                                 </div>
@@ -190,7 +198,7 @@
                                                                         <div class="input-group mb-3">
                                                                             <label class="input-group-text"
                                                                                 for="inputGroupSelect01">Group</label>
-                                                                            <select class="form-select" id="inputGroupSelect01">
+                                                                            <select class="form-select" id="bloodGroupType">
                                                                                 <option selected>Choose...</option>
                                                                                 <option value="A+">A+</option>
                                                                                 <option value="A-">A-</option>
@@ -218,7 +226,7 @@
                                                                     <div class="form-group">
                                                                         <label for="country-floating">Gender</label>
                                                                         <fieldset class="form-group">
-                                                                            <select class="form-select" id="basicSelect">
+                                                                            <select class="form-select" id="genderType">
                                                                                 <option>Male</option>
                                                                                 <option>Female</option>
                                                                                 <option>Transgender</option>
@@ -229,21 +237,21 @@
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
                                                                         <label for="company-column">Age</label>
-                                                                        <input type="number" pattern="[0-9]*" inputmode="numeric" id="company-column" class="form-control"
+                                                                        <input type="number" pattern="[0-9]*" inputmode="numeric" id="age" class="form-control"
                                                                             name="company-column" placeholder="Enter Your Age">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
                                                                         <label for="email-id-column">Contact Number</label>
-                                                                        <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="email-id-column" class="form-control"
+                                                                        <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="contactNumber" class="form-control"
                                                                             name="email-id-column" placeholder="Contact Number">
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6 col-12">
                                                                     <div class="form-group">
                                                                         <label for="email-id-column">Address</label>
-                                                                        <input type="text" id="email-id-column" class="form-control"
+                                                                        <input type="text" id="address" class="form-control"
                                                                             name="email-id-column" placeholder="Address">
                                                                     </div>
                                                                 </div>
@@ -310,7 +318,7 @@
                                                                     </div>
                                                                 </div> -->
                                                                 <div class="col-12 d-flex justify-content-end">
-                                                                    <button type="submit"
+                                                                    <button type="button" id="submitData" name="submitData"
                                                                         class="btn btn-primary me-1 mb-1">Submit</button>
                                                                     <button type="reset"
                                                                         class="btn btn-light-secondary me-1 mb-1">Reset</button>
@@ -342,13 +350,14 @@
         </div>
     </div>
     
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://demos.phplift.net/country-state-and-city-dropdown-jquery/js/countrystatecity.js?v3"></script> 
 
 
     <script src="./vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./vendors/choices.js/choices.min.js"></script>
+    <script type="module" src="./javascript/realtimeDatabase.js"></script>
 
     <script src="./js/main.js"></script>
 
