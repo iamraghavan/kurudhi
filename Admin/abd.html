@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Kurudhi</title>
 
+
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link> 
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap.css">
@@ -19,6 +22,7 @@
     <link rel="shortcut icon" href="./images/favicon.svg" type="image/x-icon">
 </head>
 <body>
+
     <div id="app">
         <div id="sidebar" class="active">
             <div class="sidebar-wrapper active">
@@ -182,14 +186,14 @@
             <div class="col-md-6 col-12">
                 <div class="form-group">
                     <label for="first-name-column ">Full Name</label>
-                    <input type="text" inputmode="text" id="name" class="form-control"
+                    <input type="text" inputmode="text" id="id1" class="form-control"
                 placeholder="Full Name" name="name">
         </div>
     </div>
     <div class="col-md-6 col-12">
         <div class="form-group">
             <label for="last-name-column">Email id</label>
-            <input inputmode="email" type="email"  id="email" class="form-control "
+            <input inputmode="email" type="email"  id="id2" class="form-control "
                 placeholder="Email" name="email">
         </div>
     </div>
@@ -199,7 +203,7 @@
             <div class="input-group mb-3">
                 <label class="input-group-text"
                     for="inputGroupSelect01">Group</label>
-                <select class="form-select" id="bloodGroupType" name="bloodGroupType">
+                <select class="form-select" id="id3" name="bloodGroupType">
                     <option selected>Choose...</option>
                     <option value="A+">A+</option>
                     <option value="A-">A-</option>
@@ -227,7 +231,7 @@
         <div class="form-group">
             <label for="country-floating">Gender</label>
             <fieldset class="form-group">
-                <select class="form-select" id="genderType" name="genderType">
+                <select class="form-select" id="id4" name="genderType">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option>Transgender</option>
@@ -238,21 +242,21 @@
     <div class="col-md-6 col-12">
         <div class="form-group">
             <label for="company-column">Age</label>
-            <input type="number" pattern="[0-9]*" inputmode="numeric" id="age" class="form-control"
+            <input type="number" pattern="[0-9]*" inputmode="numeric" id="id5" class="form-control"
                 name="age" placeholder="Enter Your Age">
         </div>
     </div>
     <div class="col-md-6 col-12">
         <div class="form-group">
             <label for="email-id-column">Contact Number</label>
-            <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="contactNumber" class="form-control"
+            <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="id6" class="form-control"
                 name="contactNumber" placeholder="Contact Number">
         </div>
     </div>
     <div class="col-md-6 col-12">
         <div class="form-group">
             <label for="email-id-column">Address</label>
-            <input type="text" id="address" class="form-control"
+            <input type="text" id="id7" class="form-control"
                 name="address" placeholder="Address">
         </div>
     </div>
@@ -261,7 +265,7 @@
             <label for="email-id-column">Select Country</label>
             
             <div class="form-group">
-                <select name="country" class="countries form-select" id="countryId">
+                <select name="country" class="countries form-select" id="id8">
                     <option value="">Select Country</option>
                 </select>
             </div>
@@ -272,7 +276,7 @@
             <label for="email-id-column">Select State</label>
             
             <div class="form-group">
-                <select name="state" class="states form-control" id="stateId">
+                <select name="state" class="states form-control" id="id9">
                     <option value="">Select State</option>
                 </select>
             </div>
@@ -283,7 +287,7 @@
             <label for="email-id-column">Select city</label>
             
             <div class="form-group">
-                <select name="city" class="cities form-control" id="cityId">
+                <select name="city" class="cities form-control" id="id10">
                     <option value="">Select City</option>
                 </select>
             </div>
@@ -291,10 +295,10 @@
     </div> 
     <br>
     <div class="col-12 d-flex justify-content-end">
-            <button class="btn btn-primary me-1 mb-1" id="insbtn" >Insert</button>
-            <button class="btn btn-primary me-1 mb-1" id="selbtn" >Select</button>
+            <button class="btn btn-primary me-1 mb-1" type="submit" sendMessage() >Submit</button>
+            <!-- <button class="btn btn-primary me-1 mb-1" id="selbtn" >Select</button>
             <button class="btn btn-primary me-1 mb-1" id="redbtn" >read</button>
-            <button class="btn btn-primary me-1 mb-1" id="delbtn" >Delete</button>
+            <button class="btn btn-primary me-1 mb-1" id="delbtn" >Delete</button> -->
         
         
             <button type="reset"
@@ -327,6 +331,11 @@
         </div>
     </div>
 
+    <div class="col-md-4 col-12">
+        <button id="error"
+            class="btn btn-outline-danger btn-lg btn-block">Error</button>
+    </div>
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://demos.phplift.net/country-state-and-city-dropdown-jquery/js/countrystatecity.js?v3"></script> 
@@ -346,92 +355,27 @@
 
 
            
-        
-            <!-- <script type="module" src="./Utility/config.firebase.js"></script> -->
-            <!-- <script type="module" src="./javascript/Dashboard.js"></script>
-    
-            <script data-main="scripts/main" src="scripts/require.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
 
+            <script type="module" src="./Utility/config.js"></script>
+            <script type="module" src="./javascript/Dashboard.js"></script>
+            <script type="module" src="./javascript/realtimeDatabase.js"></script>
+            <!-- <script data-main="scripts/main" src="scripts/require.js"></script> -->
+
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> 
 
 
 <!-- ---------------------------------------- -->
 
+<!-- <script type="module">
 
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+
   
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCJg-eG7QH6yFZRlRA2hjMwiU1Sd8t6Puw",
-      authDomain: "kurudhiweb.firebaseapp.com",
-      projectId: "kurudhiweb",
-      storageBucket: "kurudhiweb.appspot.com",
-      messagingSenderId: "993287986742",
-      appId: "1:993287986742:web:3f28546bc8f14e6d190297",
-      measurementId: "G-DVJ5PWQ84Z"
-    };
   
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
-
-    const db = getDatabase();
-
-    // Reference
-
-    var name = document.getElementById('name');
-    var email = document.getElementById('email');
-    var bloodGroupType = document.getElementById('bloodGroupType');
-    var genderType = document.getElementById('genderType');
-    var age = document.getElementById('age');
-    var contactNumber = document.getElementById('contactNumber');
-    var address = document.getElementById('address');
-    var countryId = document.getElementById('countryId');
-    var stateId = document.getElementById('stateId');
-    var cityId  = document.getElementById('cityId');
-
-    var insbtn = document.getElementById('insbtn');
-    var selbtn = document.getElementById('selbtn');
-    var redbtn = document.getElementById('redbtn');
-    var delbtn = document.getElementById('delbtn');
+</script> -->
 
 
 
-    // Insert Data Function
-
-    function InsertData(){
-        set(ref(db, "BloodGroupDetails/"+ email.value),{
-            Name : name.value,
-            Email : email.value,
-            BloodGroup : bloodGroupType.value,
-            Gender : genderType.value,
-            Age : age.value,
-            ContactNumber : contactNumber.value,
-            Address : address.value,
-            Country : countryId.value,
-            State : stateId.value,
-            City : cityId.value
-
-        })
-        .then(()=>{
-            alert("data stored sucessfully!");
-                })
-                .catch((error)=>{
-                    alert("unsuccessful, error"+error);
-                });
-    }
-
-// assign the event to button
-
-insbtn.addEventListener("click",InsertData);
-
-
-
-</script>
 
 
 <!-- ----------------------------------------- -->

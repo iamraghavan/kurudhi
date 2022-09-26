@@ -1,18 +1,8 @@
-var config = {
-    apiKey: "AIzaSyDxAw4TI0OJD2zHPEuyR2vEwPEts3cyPGI",
-  authDomain: "kurudhi-blood-bank.firebaseapp.com",
-  databaseURL: "https://kurudhi-blood-bank-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "kurudhi-blood-bank",
-  storageBucket: "kurudhi-blood-bank.appspot.com",
-  messagingSenderId: "701515333227",
-  appId: "1:701515333227:web:f93a22941229d194827b2e",
-  measurementId: "G-5D4KHPF20X"
-};
-firebase.initializeApp(config);
+// import swal from 'sweetalert';
 
 //Reference for form collection(3)
 let formMessage = firebase.database().ref('register');
-
+  
 //listen for submit event//(1)
 document
   .getElementById('registrationform')
@@ -22,19 +12,19 @@ document
 function formSubmit(e) {
   e.preventDefault();
   // Get Values from the DOM
-  let name = document.querySelector('#name').value;
-  let email = document.querySelector('#email').value;
-  let bloodGroupType = document.querySelector('#bloodGroupType').value;
-  let genderType = document.querySelector('#genderType').value;
-  let age = document.querySelector('#age').value;
-  let contactNumber = document.querySelector('#contactNumber').value;
-  let address = document.querySelector('#address').value;
-  let countryId = document.querySelector('#countryId').value;
-  let stateId = document.querySelector('#stateId').value;
-  let cityId = document.querySelector('#cityId').value;
-
+  let name = document.querySelector('#id1').value;
+  let email = document.querySelector('#id2').value;
+  let BloodGroup = document.querySelector('#id3').value;
+  let Gender = document.querySelector('#id4').value;
+  let Age = document.querySelector('#id5').value;
+  let ContactNumber = document.querySelector('#id6').value;
+  let Address = document.querySelector('#id7').value;
+  let Country = document.querySelector('#id8').value;
+  let State = document.querySelector('#id9').value;
+  let City = document.querySelector('#id10').value;
+  
   //send message values
-  sendMessage(name ,email ,bloodGroupType ,genderType ,age ,contactNumber ,address ,countryId ,stateId ,cityId);
+  sendMessage(name, email, BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City);
 
   //Show Alert Message(5)
   document.querySelector('.alert').style.display = 'block';
@@ -50,18 +40,45 @@ function formSubmit(e) {
 
 //Send Message to Firebase(4)
 
-function sendMessage(name ,email ,bloodGroupType ,genderType ,age ,contactNumber ,address ,countryId ,stateId ,cityId) {
+function sendMessage(name, email, BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City) {
   let newFormMessage = formMessage.push();
   newFormMessage.set({
     name: name,
-      email: email,
-      bloodGroupType : bloodGroupType,
-      genderType: genderType,
-      age: age, 
-      contactNumber : contactNumber,
-      address : address,
-      countryId : countryId,
-      stateId : stateId,
-      cityId : cityId,
-  });
+    email: email,
+    BloodGroup: BloodGroup,
+    Gender: Gender,
+    Age: Age,
+    ContactNumber: ContactNumber,
+    Address: Address,
+    Country : Country,
+    State : State,
+    City: City,
+
+  })
+  .then(()=>{
+      // alert("Data Stored Successfully");
+
+      swal({
+title: "Good job!",
+text: "Inforamation's Update Successfully!",
+icon: "success",
+button: "Aww yiss!"
+});
+
+  })
+  .catch((error)=>{
+      // swal("Unsuccessful, error" + error)
+
+      swal({
+        title: "Sorry, error: " + user.email ,
+        text: "Inforamation's Update Successfully!",
+        icon: "success",
+        button: "Aww yiss!"
+        });
+
+
+  })
 }
+
+
+
