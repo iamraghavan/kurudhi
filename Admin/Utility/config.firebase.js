@@ -1,13 +1,12 @@
 
 var firebaseConfig = {
-  apiKey: "AIzaSyDxAw4TI0OJD2zHPEuyR2vEwPEts3cyPGI",
-  authDomain: "kurudhi-blood-bank.firebaseapp.com",
-  databaseURL: "https://kurudhi-blood-bank-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "kurudhi-blood-bank",
-  storageBucket: "kurudhi-blood-bank.appspot.com",
-  messagingSenderId: "701515333227",
-  appId: "1:701515333227:web:f93a22941229d194827b2e",
-  measurementId: "G-5D4KHPF20X"
+  apiKey: "AIzaSyCJg-eG7QH6yFZRlRA2hjMwiU1Sd8t6Puw",
+  authDomain: "kurudhiweb.firebaseapp.com",
+  projectId: "kurudhiweb",
+  storageBucket: "kurudhiweb.appspot.com",
+  messagingSenderId: "993287986742",
+  appId: "1:993287986742:web:3f28546bc8f14e6d190297",
+  measurementId: "G-DVJ5PWQ84Z"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
