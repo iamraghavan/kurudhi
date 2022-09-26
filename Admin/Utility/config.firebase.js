@@ -11,9 +11,9 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const database = firebase.database();
 
-// admin.initializeApp({
-//     credential: admin.credential.applicationDefault(),
-//   });
-// firebase.analytics();
+
+admin.initializeApp({
+    credential: admin.credential.applicationDefault(),
+  });
+firebase.analytics();

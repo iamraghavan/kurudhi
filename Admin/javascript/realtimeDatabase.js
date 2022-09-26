@@ -1,56 +1,67 @@
-submitData.addEventListener('click', (e) => {
+var config = {
+    apiKey: "AIzaSyDxAw4TI0OJD2zHPEuyR2vEwPEts3cyPGI",
+  authDomain: "kurudhi-blood-bank.firebaseapp.com",
+  databaseURL: "https://kurudhi-blood-bank-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "kurudhi-blood-bank",
+  storageBucket: "kurudhi-blood-bank.appspot.com",
+  messagingSenderId: "701515333227",
+  appId: "1:701515333227:web:f93a22941229d194827b2e",
+  measurementId: "G-5D4KHPF20X"
+};
+firebase.initializeApp(config);
 
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var bloodGroupType = document.getElementById('bloodGroupType').value;
-    var genderType = document.getElementById('genderType').value;
-    var age = document.getElementById('age').value;
-    var contactNumber = document.getElementById('contactNumber').value;
-    var address = document.getElementById('address').value;
-    var countryId = document.getElementById('countryId').value;
-    var stateId = document.getElementById('stateId').value;
-    var cityId  = document.getElementById('cityId').value;
+//Reference for form collection(3)
+let formMessage = firebase.database().ref('register');
 
-    const newKey = push(child(ref(database), 'users')).key;
+//listen for submit event//(1)
+document
+  .getElementById('registrationform')
+  .addEventListener('submit', formSubmit);
 
-    set(ref(database, 'users/' + name), {
-        name: name,
-        email: email,
-        bloodGroupType: bloodGroupType,
-        genderType: genderType,
-        age: age,
-        contactNumber: contactNumber,
-        address: address,
-        countryId: countryId,
-        stateId: stateId,
-        cityId: cityId,
+//Submit form(1.2)
+function formSubmit(e) {
+  e.preventDefault();
+  // Get Values from the DOM
+  let name = document.querySelector('#name').value;
+  let email = document.querySelector('#email').value;
+  let bloodGroupType = document.querySelector('#bloodGroupType').value;
+  let genderType = document.querySelector('#genderType').value;
+  let age = document.querySelector('#age').value;
+  let contactNumber = document.querySelector('#contactNumber').value;
+  let address = document.querySelector('#address').value;
+  let countryId = document.querySelector('#countryId').value;
+  let stateId = document.querySelector('#stateId').value;
+  let cityId = document.querySelector('#cityId').value;
 
-    }).then(() => {
-        // Data saved successfully!
-        alert('data submitted');
-    })
-        .catch((error) => {
-            // The write failed...
-            alert(error);
-        });
-});
+  //send message values
+  sendMessage(name ,email ,bloodGroupType ,genderType ,age ,contactNumber ,address ,countryId ,stateId ,cityId);
 
-// update(ref(database, 'users/' + name), {
-//     name: name,
-//     age: age
-// }).then(() => {
-//     // Data saved successfully!
-//     alert('data updated');
-// })
-//     .catch((error) => {
-//         // The write failed...
-//         alert(error);
-//     });
+  //Show Alert Message(5)
+  document.querySelector('.alert').style.display = 'block';
 
+  //Hide Alert Message After Seven Seconds(6)
+  setTimeout(function() {
+    document.querySelector('.alert').style.display = 'none';
+  }, 7000);
 
-//     removeData.addEventListener('click',(e) => {
-//         var username = document.getElementById('name').value;
+  //Form Reset After Submission(7)
+  document.getElementById('registrationform').reset();
+}
 
-//         remove(ref(database, 'users/' + name));
-//         alert('removed');
-//     });
+//Send Message to Firebase(4)
+
+function sendMessage(name ,email ,bloodGroupType ,genderType ,age ,contactNumber ,address ,countryId ,stateId ,cityId) {
+  let newFormMessage = formMessage.push();
+  newFormMessage.set({
+    name: name,
+      email: email,
+      bloodGroupType : bloodGroupType,
+      genderType: genderType,
+      age: age, 
+      contactNumber : contactNumber,
+      address : address,
+      countryId : countryId,
+      stateId : stateId,
+      cityId : cityId,
+  });
+}
