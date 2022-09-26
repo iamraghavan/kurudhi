@@ -35,9 +35,9 @@
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class="sidebar-title">Menu</li>
-
+ 
                         <li class="sidebar-item  ">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="Dashboard.html" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
                             </a>
@@ -136,7 +136,7 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li onclick="logout()"><a class="dropdown-item" href="#"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                        class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -289,9 +289,12 @@
             </div>
         </div>
     </div> 
+    <br>
     <div class="col-12 d-flex justify-content-end">
-        <button type="submit" sendMessage()
-            class="btn btn-primary me-1 mb-1">Submit</button>
+            <button class="btn btn-primary me-1 mb-1" id="insbtn" >Insert</button>
+            <button class="btn btn-primary me-1 mb-1" id="selbtn" >Select</button>
+            <button class="btn btn-primary me-1 mb-1" id="redbtn" >read</button>
+            <button class="btn btn-primary me-1 mb-1" id="delbtn" >Delete</button>
         
         
             <button type="reset"
@@ -334,18 +337,104 @@
 
 
 
-    <script src="./vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./vendors/choices.js/choices.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+        <script src="./vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="./js/bootstrap.bundle.min.js"></script>
+    
+        <script src="./js/main.js"></script>
+    
 
-    <script type="module" src="./javascript/realtimeDatabase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
 
-    <script src="./js/main.js"></script>
-        <!-- <script type="module" src="./javascript/Dashboard.js"></script> -->
 
+           
+        
+            <!-- <script type="module" src="./Utility/config.firebase.js"></script> -->
+            <!-- <script type="module" src="./javascript/Dashboard.js"></script>
+    
+            <script data-main="scripts/main" src="scripts/require.js"></script> -->
+
+
+
+<!-- ---------------------------------------- -->
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCJg-eG7QH6yFZRlRA2hjMwiU1Sd8t6Puw",
+      authDomain: "kurudhiweb.firebaseapp.com",
+      projectId: "kurudhiweb",
+      storageBucket: "kurudhiweb.appspot.com",
+      messagingSenderId: "993287986742",
+      appId: "1:993287986742:web:3f28546bc8f14e6d190297",
+      measurementId: "G-DVJ5PWQ84Z"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+    const db = getDatabase();
+
+    // Reference
+
+    var name = document.getElementById('name');
+    var email = document.getElementById('email');
+    var bloodGroupType = document.getElementById('bloodGroupType');
+    var genderType = document.getElementById('genderType');
+    var age = document.getElementById('age');
+    var contactNumber = document.getElementById('contactNumber');
+    var address = document.getElementById('address');
+    var countryId = document.getElementById('countryId');
+    var stateId = document.getElementById('stateId');
+    var cityId  = document.getElementById('cityId');
+
+    var insbtn = document.getElementById('insbtn');
+    var selbtn = document.getElementById('selbtn');
+    var redbtn = document.getElementById('redbtn');
+    var delbtn = document.getElementById('delbtn');
+
+
+
+    // Insert Data Function
+
+    function InsertData(){
+        set(ref(db, "BloodGroupDetails/"+ email.value),{
+            Name : name.value,
+            Email : email.value,
+            BloodGroup : bloodGroupType.value,
+            Gender : genderType.value,
+            Age : age.value,
+            ContactNumber : contactNumber.value,
+            Address : address.value,
+            Country : countryId.value,
+            State : stateId.value,
+            City : cityId.value
+
+        })
+        .then(()=>{
+            alert("data stored sucessfully!");
+                })
+                .catch((error)=>{
+                    alert("unsuccessful, error"+error);
+                });
+    }
+
+// assign the event to button
+
+insbtn.addEventListener("click",InsertData);
+
+
+
+</script>
+
+
+<!-- ----------------------------------------- -->
 
 
 </body>
