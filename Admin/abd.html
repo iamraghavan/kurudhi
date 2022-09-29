@@ -180,7 +180,7 @@
                                 <div class="card">
                                     <div class="card-content">
                                         <div class="card-body">
-                                            <form class="form" action="" method="POST" id="registrationform">
+<form class="form" action="" method="POST" id="registrationform">
                                                             
     <div class="row">
             <div class="col-md-6 col-12">
@@ -227,6 +227,14 @@
             </div>
         </div>
     </div>
+
+    <div class="col-md-6 col-12">
+        <div class="form-group">
+            <label for="company-column">Date</label>
+            <input type="date" id="id12" class="form-control"
+                name="BloodDonateDate" placeholder="">
+        </div>
+    </div>
     <div class="col-md-6 col-12">
         <div class="form-group">
             <label for="country-floating">Gender</label>
@@ -251,6 +259,13 @@
             <label for="email-id-column">Contact Number</label>
             <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="id6" class="form-control"
                 name="contactNumber" placeholder="Contact Number">
+        </div>
+    </div>
+    <div class="col-md-6 col-12">
+        <div class="form-group">
+            <label for="email-id-column">Alternative Contact Number</label>
+            <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="id11" class="form-control"
+                name="contactNumber" placeholder="Alternative Contact Number">
         </div>
     </div>
     <div class="col-md-6 col-12">
@@ -293,19 +308,78 @@
             </div>
         </div>
     </div> 
+
+    <div class="col-md-6 col-12">
+        <div class="form-group">
+            <label for="email-id-column">Enter Your <b>Area / Town / City </b></label>
+            
+            <div class="form-group">
+                <input type="locations" id="id13" class="form-control"
+                name="Area" placeholder="Area / Town / City ">
+            </div>
+        </div>
+    </div> 
+    <div class="col-md-6 col-12">
+        <div class="form-group">
+            <label for="email-id-column">Please confirm your availability to donate blood</label>
+            
+            <div class="form-group">
+                <select name="city" class="form-control" id="id14">
+                    <option value="Available">Available</option>
+                    <option value="Unavailable">Unavailable</option>
+                </select>
+            </div>
+        </div>
+    </div> 
+
+
     <br>
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-content">
+                    <div class="card-body">
+                    
+<input type="checkbox" class="form-check-input form-check-success"
+id="terms_and_conditions" value="1" onclick="terms_changed(this)">
+<label class="form-check-label"
+for="customColorCheck3">  <h6>I authorise this website to display my name and telephone number, so that the needy could contact me, as and when there is an emergency.</h6> </label>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+
     <div class="col-12 d-flex justify-content-end">
-            <button class="btn btn-primary me-1 mb-1" type="submit" sendMessage() >Submit</button>
+            <button class="btn btn-primary me-1 mb-1" id="submit_button" disabled onclick="check()"  type="submit" sendMessage() >Submit</button>
             <!-- <button class="btn btn-primary me-1 mb-1" id="selbtn" >Select</button>
             <button class="btn btn-primary me-1 mb-1" id="redbtn" >read</button>
             <button class="btn btn-primary me-1 mb-1" id="delbtn" >Delete</button> -->
         
-        
+            <!-- <input type="checkbox"
+            class="form-check-input form-check-success" checked
+            name="customCheck" id="customColorCheck3">
+        <label class="form-check-label"
+            for="customColorCheck3">Success</label> -->
+
+
             <button type="reset"
             class="btn btn-light-secondary me-1 mb-1">Reset</button>
                                                                 </div>
                                                             </div>
                                                         </form>
+<br>
+<br>
+                                                        <div class="alert alert-light-info color-info">
+                                                           <b style="color:red;"> Important : </b> All Voluntary Donors are warned of likely misuse of blood donated by them at the hospital with or without the knowledge of the hospital management. At some places the hospital staff have taken the blood and sold it to others for a price. As a responsible citizen/voluntary blood donor, we request you to keep a watch on such people and hospitals. Donors must inform the Kurudhi team Members / Coordinators of such areas in case of any doubt.
+                                                        </div>
 
                                                         
                                                     </div>
@@ -316,8 +390,15 @@
                                 </section>
                             </div>
                         </div>
+
+
+
+
                     </section>
                 </div>
+
+                <!-- Enter your age: <input id="age">
+                <button onclick="check()">Check</button> -->
 
                 <footer>
                     <div class="footer clearfix mb-0 text-muted">
@@ -330,55 +411,57 @@
             </div>
         </div>
     </div>
-<!-- 
-    <div class="col-md-4 col-12">
-        <button id="error"
-            class="btn btn-outline-danger btn-lg btn-block">Error</button>
-<<<<<<< HEAD
-    </div>
   
-=======
-    </div> -->
-
->>>>>>> 0b66340b054cfc8ea399f702140e02c55c59415b
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="https://demos.phplift.net/country-state-and-city-dropdown-jquery/js/countrystatecity.js?v3"></script> 
-
-
-
-       
-
-
-
         <script src="./vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
         <script src="./js/bootstrap.bundle.min.js"></script>
-    
         <script src="./js/main.js"></script>
-    
-
-
-
-           
         <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-
-            <script type="module" src="./Utility/config.js"></script>
-            <script type="module" src="./javascript/Dashboard.js"></script>
-            <script type="module" src="./javascript/realtimeDatabase.js"></script>
+        <script type="module" src="./Utility/config.js"></script>
+        <script type="module" src="./javascript/Dashboard.js"></script>
+        <script type="module" src="./javascript/realtimeDatabase.js"></script>
             <!-- <script data-main="scripts/main" src="scripts/require.js"></script> -->
 
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> 
 
 
+         
+
+
 <!-- ---------------------------------------- -->
 
-<!-- <script type="module">
+<script>
+    function terms_changed(termsCheckBox){
+        if(termsCheckBox.checked){
+            document.getElementById("submit_button").disabled = false;
+        } else{
+            document.getElementById("submit_button").disabled = true;
+        }
+    }
 
+    // Age Checking above 60+
 
-  
-  
-</script> -->
+    var ages = document.getElementById("id5");
+    function check(){
+             var nbr;
+             nbr = Number(document.getElementById("id5").value);
+             if(nbr > 60 || nbr > 18)
+             {
+                // swal("You are not an adult");
+             }
+             else
+             {
+                swal({
+        title: "Sorry Voluntary Donor " ,
+        text: `You are not eligible for Donate Blood ! ${ages} `,
+        icon: "success",
+        button: "Aww yiss!"
+        });
+             }
+         }
 
+</script>
 
 
 

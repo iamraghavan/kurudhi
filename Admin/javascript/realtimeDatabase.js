@@ -22,9 +22,16 @@ function formSubmit(e) {
   let Country = document.querySelector('#id8').value;
   let State = document.querySelector('#id9').value;
   let City = document.querySelector('#id10').value;
+  let AlternativeNumber = document.querySelector('#id11').value;
+  let LastDate = document.querySelector('#id12').value;
+  let Area = document.querySelector('#id13').value;
+  let CheckStatus = document.querySelector('#id14').value; 
+
+
+  // let City = document.querySelector('#id10').value;
   
   //send message values
-  sendMessage(name, email, BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City);
+  sendMessage(name, email , BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City, AlternativeNumber, LastDate , Area, CheckStatus );
 
   //Show Alert Message(5)
   document.querySelector('.alert').style.display = 'block';
@@ -40,7 +47,8 @@ function formSubmit(e) {
 
 //Send Message to Firebase(4)
 
-function sendMessage(name, email, BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City) {
+function sendMessage(name, email , BloodGroup, Gender, Age, ContactNumber, Address, Country, State, City, 
+  AlternativeNumber, LastDate , Area, CheckStatus ) {
   let newFormMessage = formMessage.push();
   newFormMessage.set({
     name: name,
@@ -53,6 +61,10 @@ function sendMessage(name, email, BloodGroup, Gender, Age, ContactNumber, Addres
     Country : Country,
     State : State,
     City: City,
+    AlternativeNumber : AlternativeNumber,
+    LastBloodDonatedDate : LastDate,
+    Area : Area,
+    CheckStatus : CheckStatus,
 
   })
   .then(()=>{
