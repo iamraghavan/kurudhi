@@ -10,6 +10,6 @@ var config = {
   };
   firebase.initializeApp(config);
 
-admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-  });
+// admin.initializeApp({
+//     credential: admin.credential.applicationDefault(),
+//   });
