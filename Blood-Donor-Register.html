@@ -418,8 +418,22 @@ id="terms_and_conditions" value="1" onclick="terms_changed(this)">
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/theme.js"></script>
   <script src="./assets/Database/firebaseConfig.js"></script>
+<<<<<<< HEAD
   <script src="./assets/Database/firebaseDatabse.js"></script>
 
+=======
+  <script src="./assets/js/plugins.js"></script>
+  <script src="./assets/js/theme.js"></script>
+  <!-- /.container -->
+  <script>
+    function terms_changed(termsCheckBox){
+        if(termsCheckBox.checked){
+            document.getElementById("submit_button").disabled = false;
+        } else{
+            document.getElementById("submit_button").disabled = true;
+        }
+    }
+>>>>>>> 9883a740b10d11edd4a272c17271d00219b8fb52
 
 
 </body>
