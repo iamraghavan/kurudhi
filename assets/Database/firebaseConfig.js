@@ -9,7 +9,8 @@ var config = {
     measurementId: "G-DVJ5PWQ84Z"
     };
     firebase.initializeApp(config)
+    // var db = firebase.firestore();
 
-    admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
-  });
+//     admin.initializeApp({
+//     credential: admin.credential.applicationDefault(),
+//   });
