@@ -30,7 +30,7 @@
                 <div class="sidebar-header">
                     <div class="d-flex justify-content-between">
                         <div class="logo">
-                            <a href="index.html"><img src="https://firebasestorage.googleapis.com/v0/b/portfolio-4bf1c.appspot.com/o/NaviBlueLogo.png?alt=media&token=ff698b21-89d5-42e0-935c-e57a15f4203c" alt="Logo" srcset=""></a>
+                           
                         </div>
                         <div class="toggler">
                             <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
@@ -170,17 +170,30 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 mb-1">
+                    <div class="col-12">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1"><i
                                     class="bi bi-search"></i></span>
-                            <input type="text" class="form-control"
-                                placeholder="Search Blood Donor"
-                                aria-label="Recipient's username"
-                                aria-describedby="button-addon2">
+                            
 
-                                <select class="form-select" id="inputGroupSelect01">
-                                    <option selected>Select Blood Group</option>
+                                
+
+                                  <select class=" countries form-select" id="idName">
+                                    
+                                        <option value="">Country</option>
+                                  
+                                  </select>
+
+                                  <select name="state" class="states form-select" id="idCountry">
+                                    <option value="">Select State</option>
+                                </select>
+
+                                <select name="city" class="cities form-select" id="idAge">
+                                    <option value="">Select City</option>
+                                </select>
+
+                                <select class="form-select" id="idSalary">
+                                    <option selected>Blood Group</option>
                                     <option value="A+">A+</option>
                                     <option value="A-">A-</option>
                                     <option value="A1+">A1+</option>
@@ -202,8 +215,7 @@
                                   </select>
 
 
-                            <button class="btn btn-outline-secondary" type="button"
-                                id="button-addon2">Search</button>
+                            <button class="btn btn-outline-secondary" type="button" onclick="SearchData();" value="Submit">Search</button>
                         </div>
                     </div>
 
@@ -273,14 +285,7 @@
                 <!-- Enter your age: <input id="age">
                 <button onclick="check()">Check</button> -->
 
-                <footer>
-                    <div class="footer clearfix mb-0 text-muted">
-                        <div class="float-start">
-                            <p>2022 &copy; Bumble Bees</p>
-                        </div>
-                        
-                    </div>
-                </footer>
+                
             </div>
         </div>
     </div>
@@ -312,9 +317,70 @@
 
 <!-- ---------------------------------------- -->
 
+<!-- <script>
+    $(document).ready(function() {
+        $("#gfg").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#tbody1 tr").filter(function() {
+                $(this).toggle($(this).text()
+                .toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
 
 
 
+</script> -->
+<!-- <script>
+    // Simple Datatable
+    let table1 = document.querySelector('#table1');
+    let dataTable = new simpleDatatables.DataTable(table1);
+</script> -->
+
+<script>
+    const table = document.getElementById("table1");
+// save all tr
+const tr = table.getElementsByTagName("tr");
+
+function SearchData() {
+
+var name = document.getElementById("idName").value.toUpperCase();
+var country = document.getElementById("idCountry").value.toUpperCase();
+var age = document.getElementById("idAge").value.toUpperCase();
+var salary = document.getElementById("idSalary").value.toUpperCase();
+
+for (i = 1; i < tr.length; i++) {
+
+var rowName = tr[i].getElementsByTagName("td")[0].textContent.toUpperCase();
+var rowCountry = tr[i].getElementsByTagName("td")[1].textContent.toUpperCase();
+var rowAge = tr[i].getElementsByTagName("td")[2].textContent.toUpperCase();
+var rowSalary = tr[i].getElementsByTagName("td")[3].textContent.toUpperCase();
+
+var isDiplay = true;
+
+if (name != 'ALL' && rowName != name) {
+  isDiplay = false;
+}
+if (country != 'ALL' && rowCountry != country) {
+  isDiplay = false;
+}
+if (age != 'ALL' && rowAge != age) {
+  isDiplay = false;
+}
+if (salary != 'ALL' && rowSalary != salary) {
+  isDiplay = false;
+}
+
+if (isDiplay) {
+  tr[i].style.display = "";
+} else {
+  tr[i].style.display = "none";
+}
+
+
+}
+}
+  </script>
 
 <!-- ----------------------------------------- -->
 

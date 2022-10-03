@@ -310,7 +310,7 @@ var myBar = new Chart(ctxBar, {
         barRoundness: 1,
         title: {
             display: true,
-            text: "Students in 2020"
+            text: "Blood Donors"
         },
         legend: {
             display: false

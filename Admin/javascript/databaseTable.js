@@ -50,6 +50,10 @@ function AddItemsToTable(name, email , BloodGroup, Gender, Age, ContactNumber, A
     var td13 = document.createElement('td');
     var td14 = document.createElement('td');
 
+
+
+
+
     td1.innerHTML   = name; 
     td2.innerHTML   = email;
     td3.innerHTML   = Gender;
@@ -84,6 +88,48 @@ function AddItemsToTable(name, email , BloodGroup, Gender, Age, ContactNumber, A
 
     tbody.appendChild(trow);
 
-
 }
 
+
+// const table = document.getElementById("table1");
+
+// const tr = table.getElementsByTagName("tr");
+
+// function SearchData() {
+
+//   var BloodGroup = document.getElementById("CategorySelect").value.toUpperCase();
+//   var country = document.getElementById("CountrySelect").value.toUpperCase();
+//   var state = document.getElementById("StateSelect").value.toUpperCase();
+//   var city = document.getElementById("CitySelect").value.toUpperCase();
+
+//   for (i = 1; i < tr.length; i++) {
+
+//     var rowName = tr[i].getElementsByTagName("td")[0].textContent.toUpperCase();
+//     var rowCountry = tr[i].getElementsByTagName("td")[1].textContent.toUpperCase();
+//     var rowState = tr[i].getElementsByTagName("td")[2].textContent.toUpperCase();
+//     var rowCity = tr[i].getElementsByTagName("td")[3].textContent.toUpperCase();
+
+//     var isDiplay = true;
+
+//     if (BloodGroup != 'ALL' && rowName != BloodGroup) {
+//       isDiplay = false;
+//     }
+//     if (country != 'ALL' && rowCountry != country) {
+//       isDiplay = false;
+//     }
+//     if (state != 'ALL' && rowState != state) {
+//       isDiplay = false;
+//     }
+//     if (city != 'ALL' && rowCity != city) {
+//       isDiplay = false;
+//     }
+    
+//     if (isDiplay) {
+//       tr[i].style.display = "";
+//     } else {
+//       tr[i].style.display = "none";
+//     }
+
+
+//   }
+// }

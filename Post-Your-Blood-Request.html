@@ -156,33 +156,10 @@
                       
                     </div>
                   </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                        <input type="date" id="id12" class="form-control"
-                name="BloodDonateDate" placeholder="Last Date of Blood Donate">
-                      <label for="lastName" class="form-label">Last Date of Blood Donate <span class="text-muted">(Optional)</span></label>
-                      
-                    </div>
-                  </div>
+                  
                  
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                        <select class="form-select" id="id4" name="genderType" required>
-                            <option value="">Select Your Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option>Transgender</option>
-                        </select>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                        <input type="number" pattern="[0-9]*" inputmode="numeric" id="id5" class="form-control"
-                        name="age" placeholder="Enter Your Age" required>
-                      <label for="address" class="form-label">Age</label>
-                      
-                    </div>
-                  </div>
+                  
+                  
                   <div class="col-sm-6">
                     <div class="form-floating">
                       <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="id6" class="form-control"
@@ -190,6 +167,7 @@
                 <label for="address2" class="form-label">Enter Contact Number</label>
                     </div>
                   </div>
+
                   <div class="col-sm-6">
                     <div class="form-floating">
                       <input inputmode="tel" type="number" pattern="[0-9]*" inputmode="numeric" id="id11" class="form-control"
@@ -199,6 +177,7 @@
                       
                     </div>
                   </div>
+                  
                   <div class="col-12">
                     <div class="form-floating">
                       <input type="text" id="id7" class="form-control"
@@ -208,44 +187,15 @@
                       
                     </div>
                   </div>
-                  <div class="col-md-4">
-                    <div class="form-select-wrapper">
-                      <select name="country" class="countries form-select" id="id8">
-                        <option value="">Select Country</option>
-                    </select>
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-select-wrapper">
-                      <select name="state" class="states form-select" id="id9">
-                        <option value="">Select State</option>
-                    </select>
-                      
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="form-select-wrapper">
-                      <select name="city" class="cities form-select" id="id10">
-                        <option value="">Select City</option>
-                    </select>
-                      
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
+                  
+                  
+                  
+                  
+                  <div class="col-12">
                     <div class="form-floating">
-                      <input type="locations" id="id13" class="form-control"
-                      name="Area" placeholder="Area / Town / City ">
-                <label for="address2" class="form-label">Area / Town / City</label>
-                    </div>
-                  </div>
-                  <div class="col-sm-6">
-                    <div class="form-floating">
-                      <select name="city" class="form-control" id="id14">
-                        <option value="Available">Available</option>
-                        <option value="Unavailable">Unavailable</option>
-                    </select>
-                <label for="address2" class="form-label">Please confirm your availability to donate blood</label>
+                        <input type="text" id="id14" class="form-control"
+                        name="address" placeholder="Message">
+                <label for="address2" class="form-label">Enter Message</label>
                     </div>
                   </div>
                   <!-- <div class="col-md-3">
@@ -257,20 +207,14 @@
                   </div> -->
                 </div>
                 <hr class="mt-7 mb-6">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input form-check-success"
-id="terms_and_conditions" value="1" onclick="terms_changed(this)">
-                  <label class="form-check-label">I authorise this website to display my name and telephone number, so that the needy could contact me, as and when there is an emergency.</label>
-                </div>
-                <hr class="mt-7 mb-6">
-
+                
                
                 
                 <div class="row">
-                  <div class="col-xl-8">
+                  <div class="col-12">
                     <div class="row gy-3 gx-3"> 
                       
-                      <button class="btn btn-primary me-1 mb-1" id="submit_button" disabled onclick="check()"  type="submit" sendMessage() >Submit</button>
+                      <button class="btn btn-primary me-1 mb-1" id="submit_button"   type="submit" sendMessage() >Submit</button>
                       
                     </div>
                   </div>
@@ -411,30 +355,24 @@ id="terms_and_conditions" value="1" onclick="terms_changed(this)">
 
 
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://demos.phplift.net/country-state-and-city-dropdown-jquery/js/countrystatecity.js?v3"></script> 
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://demos.phplift.net/country-state-and-city-dropdown-jquery/js/countrystatecity.js?v3"></script>  -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script> 
 
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/theme.js"></script>
   <script src="./assets/Database/firebaseConfig.js"></script>
 
-  <script src="./assets/Database/firebaseDatabse.js"></script>
+
+  <!-- <script src="./assets/Database/firebaseDatabse.js"></script> -->
+  <script src="./assets/Database/requestDatabase.js"></script>
 
 
   <script src="./assets/js/plugins.js"></script>
   <script src="./assets/js/theme.js"></script>
   <!-- /.container -->
 
-  <script>
-    function terms_changed(termsCheckBox){
-        if(termsCheckBox.checked){
-            document.getElementById("submit_button").disabled = false;
-        } else{
-            document.getElementById("submit_button").disabled = true;
-        }
-    }
-  </script>
+
 
   
 
