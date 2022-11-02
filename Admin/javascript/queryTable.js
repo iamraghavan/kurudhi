@@ -7,13 +7,13 @@ function SelectAllData(){
                 var BloodGroup = CurrentRecord.val().BloodGroup;
                 
                 var ContactNumber = CurrentRecord.val().ContactNumber;
-                var Address = CurrentRecord.val().Address;
+                // var Address = CurrentRecord.val().Address;
                 
                 var AlternativeNumber = CurrentRecord.val().AlternativeNumber;
               
                 var Message = CurrentRecord.val().Message;
 
-                AddItemsToTable(name, email , BloodGroup,  ContactNumber, Address,
+                AddItemsToTable(name, email , BloodGroup,  ContactNumber,
                  AlternativeNumber, Message);
             }
         );
@@ -25,7 +25,7 @@ window.onload = SelectAllData;
 
 // Filling the Table with Firebase Database
 
-function AddItemsToTable(name, email , BloodGroup,ContactNumber, Address, 
+function AddItemsToTable(name, email , BloodGroup, ContactNumber, 
     AlternativeNumber, Message){
 
 
@@ -37,7 +37,7 @@ function AddItemsToTable(name, email , BloodGroup,ContactNumber, Address,
     var td4 = document.createElement('td');
     var td5 = document.createElement('td');
     var td6 = document.createElement('td');
-    var td7 = document.createElement('td');
+    var td6 = document.createElement('td');
 
 
 
@@ -50,7 +50,7 @@ function AddItemsToTable(name, email , BloodGroup,ContactNumber, Address,
     td4.innerHTML   = AlternativeNumber;
     td5.innerHTML   = BloodGroup;
     td6.innerHTML   = Address;
-    td7.innerHTML  = Message;
+    td6.innerHTML  = Message;
 
 
     trow.appendChild(td1);
@@ -59,7 +59,7 @@ function AddItemsToTable(name, email , BloodGroup,ContactNumber, Address,
     trow.appendChild(td4);
     trow.appendChild(td5);
     trow.appendChild(td6);
-    trow.appendChild(td7);
+    trow.appendChild(td6);
 
 
 
@@ -74,7 +74,6 @@ const shareData = {
   }
   
   const btn = document.querySelector('button');
-  const resultPara = document.querySelector('.result');
   
   // Share must be triggered by "user activation"
   btn.addEventListener('click', async () => {
