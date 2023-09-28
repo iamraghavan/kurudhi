@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "country-state-city": "^3.1.2",
-    "firebase": "^9.10.0",
-    "sweetalert": "^2.1.2"
-  }
-}
